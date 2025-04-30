@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>جدول تفاعلي</title>
+<style>
+  body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* لمركزة العناصر أفقياً في الصفحة */
+  }
+  h1 {
+    margin-bottom: 20px; /* لإضافة مسافة بين العنوان والجدول */
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  .button-container {
+    text-align: center;
+  }
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+  <h1>برنامج الضمان للكابتن عيسى الياسري</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>الرقم</th>
+        <th>اسم الزبون</th>
+        <th>تاريخ الاستلام</th>
+        <th>نوع المنتج</th>
+        <th>السعر</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="text" id="row2-col1"></td>
+        <td><input type="text" id="row2-col2"></td>
+        <td><input type="text" id="row2-col3"></td>
+        <td><input type="text" id="row2-col4"></td>
+        <td><input type="text" id="row2-col5"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="button-container">
+    <button id="saveButton">حفظ التغييرات</button>
+  </div>
+
+  <script>
+    const saveButton = document.getElementById('saveButton');
+    const row2Cells = [
+      document.getElementById('row2-col1'),
+      document.getElementById('row2-col2'),
+      document.getElementById('row2-col3'),
+      document.getElementById('row2-col4'),
+      document.getElementById('row2-col5')
+    ];
+
+    saveButton.addEventListener('click', () => {
+      const rowData = row2Cells.map(cell => cell.value);
+      alert('تم حفظ البيانات التالية للصف الثاني: ' + rowData.join(', '));
+      // هنا يمكنك إضافة كود إضافي لحفظ هذه البيانات في مكان ما (مثل قاعدة بيانات أو تخزين محلي)
+    });
+  </script>
+
+</body>
+</html>
